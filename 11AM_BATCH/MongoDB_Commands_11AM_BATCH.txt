@@ -1,0 +1,98 @@
+INSERT -> CREATE Operation
+UPDATE -> UPDATE Operation
+FETCH  -> READ Operation
+DELETE -> DELETE Operation 
+
+CURD / CRUD Operation
+----------------------
+1) Command Prompt -> DBA 
+2) Standalone JS Program -> Unit Testing
+3) Website
+
+Type of Mongo DB
+----------------
+1) Local Mongo DB server
+2) MongoDB Atlas -> Cloud Server
+
+Windows Services -> Windows + R -> run 
+
+services.msc
+
+3 database -> 
+
+database -> infosysdb
+
+table -> employee
+
+to create / Switch a database
+---------------------
+use infosysdb
+
+to create a collection / table
+------------------------------
+db.createCollection('employee');
+
+show all tables in database
+---------------------------
+show collections
+
+INSERT a record in a table
+--------------------------
+db.employee.insertOne({
+	name : 'John',
+	age : 35,
+	salary : 75000,
+	designation : 'Tech Lead'
+});
+
+db.employee.insertMany([
+{
+	name : 'Wilson',
+	age : 45,
+	salary : 95000,
+	designation : 'Sr.Manager'
+},
+{
+	name : 'Wilson',
+	age : 45,
+	salary : 95000,
+	designation : 'Sr.Manager'
+}]);
+
+READ data from a table
+----------------------
+db.employee.find().pretty();
+
+db.employee.find({name : 'John'}).pretty();
+
+UPDATE record in database
+--------------------------
+db.employee.updateOne({name : 'John'} , {
+	$set : {
+		designation : 'Project Manager'
+	}
+});
+
+db.employee.updateOne({name : 'Wilson'} , {
+	$set : {
+		designation : 'Delivery Manager'
+	}
+});
+
+DELETE a record from database
+-----------------------------
+db.employee.deleteOne({name : 'John'});
+
+db.employee.deleteOne({_id : ObjectId("5d7c8babd5a83ce52cc3020b")});
+
+
+
+Mongo DB Atlas
+---------------
+Sign Up to Mongo db Atlas
+verify the email
+Login to Mongo DB Atlas
+Create a free Cluster
+Create Database Access Account
+Create Network Access
+
